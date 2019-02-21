@@ -1,4 +1,3 @@
-from NiaPy.algorithms.basic import ArtificialBeeColonyAlgorithm
 import math
 
 class FuncionArticuloBase(object):
@@ -34,7 +33,7 @@ class FuncionArticuloBase(object):
             return val
         return evaluate
 
-# Creación función a optimizar
+# Definición de los parámetros de la función a optimizar
 param = {}
 param["l"] = 3400
 param["P"] = 60000
@@ -66,19 +65,5 @@ param["M"] = 0.05
 param["N"] = 0.01
 param["r"] = 10
 
-# Crear función del artículo base (la que se va a optimizar)
+# Creación del objeto que representa la función a optimizar
 funcionArticuloBase = FuncionArticuloBase(param)
-#evalFuncion = funcionArticuloBase.function()
-#print(evalFuncion(1, [3361]))
-
-# Artificial Bee Colony
-algoritmoColoniaAbejasArtificiales = ArtificialBeeColonyAlgorithm(1, 100, 1000, FuncionArticuloBase(param))
-
-# running algorithm returns best found minimum
-valor_optimo = algoritmoColoniaAbejasArtificiales.run()
-
-# Imprimir punto solución
-print('Punto solución: ' + str(algoritmoColoniaAbejasArtificiales.Best.Solution[0]))
-
-# Imprimir valor óptimo
-print('Valor óptimo: ' + str(valor_optimo))
