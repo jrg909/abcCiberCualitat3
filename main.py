@@ -1,8 +1,8 @@
-from NiaPy.algorithms.basic import ArtificialBeeColonyAlgorithm
+from abc_extension import ABCRegistrarMejores
 from funcion_articulo_base import funcionArticuloBase
 
 # Creación del objeto que representa el algoritmo a utilizar con los parámetros indicados
-algoritmoColoniaAbejasArtificiales = ArtificialBeeColonyAlgorithm(1, 100, 1000, funcionArticuloBase)
+algoritmoColoniaAbejasArtificiales = ABCRegistrarMejores(1, 4, 22, funcionArticuloBase)
 
 # Ejecutar algoritmo
 valor_optimo = algoritmoColoniaAbejasArtificiales.run()
@@ -12,3 +12,5 @@ print('Punto solución: ' + str(algoritmoColoniaAbejasArtificiales.Best.Solution
 
 # Imprimir valor óptimo
 print('Valor óptimo: ' + str(valor_optimo))
+
+print(algoritmoColoniaAbejasArtificiales.obtenerRegistros())
