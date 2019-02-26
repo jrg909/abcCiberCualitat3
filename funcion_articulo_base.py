@@ -7,6 +7,7 @@ class FuncionArticuloBase(object):
        self.Lower = 0.000001
        # define upper bound of benchmark function
        self.Upper = 3361.3
+       # Guardar parámetros de la función
        self.param = param
 
     # function which returns evaluate function
