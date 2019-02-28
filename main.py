@@ -43,8 +43,8 @@ for i in range(iteraciones + 1):
     promedios_mejores_soluciones_por_iteracion.append(np.mean(mejores_soluciones_iteracion_i))
 
 # Crear y guardar gráfica de resultados
-a = pyplot.plot(range(iteraciones + 1), promedios_mejores_soluciones_por_iteracion)
 pyplot.axhline(y=optimo_esperado, color='r')
+a = pyplot.plot(range(iteraciones + 1), promedios_mejores_soluciones_por_iteracion)
 pyplot.subplots_adjust(left = 0.15)
 pyplot.title('Promedios de la mejor solución en cada iteración para ' + str(ejecuciones) + ' ejecuciones')
 pyplot.xlim(0, iteraciones)
