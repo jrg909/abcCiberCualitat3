@@ -1,17 +1,37 @@
 import math
 
 class FuncionArticuloBase(object):
+    '''
+    Esta clase implementa el "benchmark" (término que en NiaPy se refiera a una
+    función que se desea optimizar) personalizado que representa
+    la función a optimizar del artículo "Desarrollo de un modelo para determinar 
+    el lote óptimo de producción mediante programación no lineal y propuesta de su 
+    resolución con una hoja de cálculo", desarrollado por Javier Valencia, María Pilar Lambán 
+    y Jesús Royo.
+    '''
 
     def __init__(self, param):
-       # define lower bound of benchmark function
-       self.Lower = 0.000001
-       # define upper bound of benchmark function
-       self.Upper = 3361.3
-       # Guardar parámetros de la función
-       self.param = param
+        '''
+        Constructor que inicializa la función con sus límites y parámetros.
+        Args:
+            param (dict{str:float}): parámetros de la función
+        '''
+        # Se define el límite inferior de la función
+        self.Lower = 0.000001
+        # Se define el límite superior de la función
+        self.Upper = 3361.3
+        # Se guardan los parámetros de la función
+        self.param = param
 
-    # function which returns evaluate function
     def function(self):
+        '''
+        Función que retorna otra función que calcula el valor de la función
+        a optimizar
+        Returns:
+            func([float], float): función que evalúa [float] en la función a optimizar.
+                                  [float] solo puede tener 1 elemento, puesto que la
+                                  función es de 1 variable.
+        '''
         def evaluate(D, sol):
 
             # Revisar integridad de los argumentos
